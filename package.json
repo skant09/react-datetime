@@ -1,11 +1,11 @@
 {
-  "name": "react-datetime",
+  "name": "react-dateTime",
   "version": "2.8.10",
   "description": "A lightweight but complete datetime picker React.js component.",
-  "homepage": "https://github.com/YouCanBookMe/react-datetime",
+  "homepage": "https://github.com/skant09/react-datetime",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YouCanBookMe/react-datetime"
+    "url": "https://github.com/skant09/react-datetime"
   },
   "main": "./DateTime.js",
   "typings": "./DateTime.d.ts",
