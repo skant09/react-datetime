@@ -68,7 +68,7 @@ var DateTimePickerDays = onClickOutside( createClass({
 
 		// Go to the last week of the previous month
     prevMonth.date(prevMonth.daysInMonth()).startOf('week');
-    var lastDay = date.endOf('month');
+    var lastDay = prevMonth.clone().add(42, 'd');
 
     while (prevMonth.isBefore(lastDay)) {
       classes = 'rdtDay';
