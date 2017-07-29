@@ -1,9 +1,10 @@
 'use strict';
 
 var React = require('react'),
-  createClass = require('create-react-class'),
-  moment = require('moment'),
-  onClickOutside = require('react-onclickoutside');
+	createClass = require('create-react-class'),
+	moment = require('moment'),
+	onClickOutside = require('react-onclickoutside')
+	;
 
 var DateTimePickerDays = onClickOutside( createClass({
 	render: function() {
@@ -11,7 +12,7 @@ var DateTimePickerDays = onClickOutside( createClass({
 			date = this.props.viewDate,
 			locale = date.localeData(),
 			tableChildren
-		;
+			;
 
 		tableChildren = [
 			React.createElement('thead', { key: 'th' }, [
@@ -38,30 +39,32 @@ var DateTimePickerDays = onClickOutside( createClass({
 	 * depending on the current locale
 	 * @return {array} A list with the shortname of the days
 	 */
-  getDaysOfWeek: function (locale) {
-    var days = locale._weekdaysMin,
-      first = locale.firstDayOfWeek(),
-      dow = [],
-      i = 0;
+	getDaysOfWeek: function( locale ) {
+		var days = locale._weekdaysMin,
+			first = locale.firstDayOfWeek(),
+			dow = [],
+			i = 0
+			;
 
-    days.forEach(function (day) {
-      dow[ (7 + (i++) - first) % 7 ] = day;
-    });
+		days.forEach( function( day ) {
+			dow[ (7 + ( i++ ) - first) % 7 ] = day;
+		});
 
-    return dow;
-  },
+		return dow;
+	},
 
-  renderDays: function () {
-    var date = this.props.viewDate,
-      selected = this.props.selectedDate && this.props.selectedDate.clone(),
-      prevMonth = date.clone().subtract(1, 'months'),
-      currentYear = date.year(),
-      currentMonth = date.month(),
-      weeks = [],
-      days = [],
-      renderer = this.props.renderDay || this.renderDay,
-      isValid = this.props.isValidDate || this.alwaysValidDate,
-      classes, isDisabled, dayProps, currentDate;
+	renderDays: function() {
+		var date = this.props.viewDate,
+			selected = this.props.selectedDate && this.props.selectedDate.clone(),
+			prevMonth = date.clone().subtract( 1, 'months' ),
+			currentYear = date.year(),
+			currentMonth = date.month(),
+			weeks = [],
+			days = [],
+			renderer = this.props.renderDay || this.renderDay,
+			isValid = this.props.isValidDate || this.alwaysValidDate,
+			classes, isDisabled, dayProps, currentDate
+			;
 
 		// Go to the last week of the previous month
     prevMonth.date(prevMonth.daysInMonth()).startOf('week');
@@ -139,9 +142,9 @@ var DateTimePickerDays = onClickOutside( createClass({
     return 1;
   },
 
-  handleClickOutside: function () {
-    this.props.handleClickOutside();
-  }
+	handleClickOutside: function() {
+		this.props.handleClickOutside();
+	}
 }));
 
 module.exports = DateTimePickerDays;
